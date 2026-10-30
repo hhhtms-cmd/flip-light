@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Light · Flip 红绿灯 — Pre-Purchase Deal Check</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">🚦</div>
+    <div>
+      <h1><span data-i18n="title">Flip 红绿灯</span> <small>v1.0</small></h1>
+      <p data-i18n="subtitle">买入前决策报告 · Pre-Purchase Deal Check</p>
+    </div>
+  </div>
+  <button id="langBtn" class="lang-btn">EN</button>
+</header>
+
+<p class="tagline" data-i18n="tagline"></p>
+
+<section class="toolbar card">
+  <button id="btnCase" class="btn primary" data-i18n="loadCase"></button>
+  <button id="btnClear" class="btn" data-i18n="clear"></button>
+  <label class="btn file-btn"><span data-i18n="uploadData"></span>
+    <input type="file" id="fileData" accept=".csv,.json" hidden></label>
+  <label class="btn file-btn"><span data-i18n="uploadPhotos"></span>
+    <input type="file" id="filePhotos" accept="image/*,.pdf,.csv,.json" multiple hidden></label>
+  <button id="btnTemplate" class="btn" data-i18n="downloadTemplate"></button>
+  <button id="btnDeal" class="btn" data-i18n="downloadDeal"></button>
+  <button id="btnReport" class="btn" data-i18n="downloadReport"></button>
+  <button id="btnPrint" class="btn" data-i18n="print"></button>
+  <p class="note" data-i18n="uploadNote"></p>
+</section>
+
+<main class="layout">
+  <section class="inputs">
+    <div class="card">
+      <h2 data-i18n="secProperty"></h2>
+      <label><span data-i18n="address"></span><input id="f_address" type="text"></label>
+      <div class="grid2">
+        <label><span data-i18n="sqft"></span><input id="f_sqft" type="number" step="1"></label>
+        <label><span data-i18n="tier"></span>
+          <select id="f_tier">
+            <option value="lux" data-i18n="tierLux"></option>
+            <option value="mid" data-i18n="tierMid" selected></option>
+            <option value="entry" data-i18n="tierEntry"></option>
+          </select></label>
+        <label><span data-i18n="beds"></span><input id="f_beds" type="number" step="1"></label>
+        <label><span data-i18n="baths"></span><input id="f_baths" type="number" step="0.5"></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 data-i18n="secDeal"></h2>
+      <div class="grid2">
+        <label><span data-i18n="price"></span><input id="f_price" type="number" step="1000"></label>
+        <label><span data-i18n="arv"></span><input id="f_arv" type="number" step="1000"></label>
+        <label><span data-i18n="buyPct"></span><input id="f_buyPct" type="number" step="0.1"></label>
+        <label><span data-i18n="sellPct"></span><input id="f_sellPct" type="number" step="0.1"></label>
+        <label><span data-i18n="target"></span><input id="f_target" type="number" step="5000"></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 data-i18n="secReno"></h2>
+      <div id="renoRows"></div>
+      <div class="reno-sum">
+        <span data-i18n="renoTotal"></span>: <b id="renoTotal">$0</b>
+        · <span data-i18n="systemShare"></span>: <b id="systemShare">0%</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 data-i18n="secFinance"></h2>
+      <div class="grid2">
+        <label><span data-i18n="loan"></span><input id="f_loan" type="number" step="5000"></label>
+        <label><span data-i18n="rate"></span><input id="f_rate" type="number" step="0.1"></label>
+        <label><span data-i18n="months"></span><input id="f_months" type="number" step="0.1"></label>
+        <label><span data-i18n="monthlyCarrying"></span><input id="f_carry" type="number" step="50"></label>
+      </div>
+    </div>
+
+    <div class="card" id="photosSec" style="display:none">
+      <h2 data-i18n="photosTitle"></h2>
+      <div id="photoGrid" class="photo-grid"></div>
+    </div>
+  </section>
+
+  <section class="results">
+    <div id="verdict" class="verdict red">—</div>
+    <div class="card kpis">
+      <div class="kpi"><span data-i18n="rMaxTarget"></span><b id="r_maxTarget" class="big">$0</b></div>
+      <div class="kpi"><span data-i18n="rMaxBE"></span><b id="r_maxBE" class="big">$0</b></div>
+      <div class="kpi"><span data-i18n="rProfit"></span><b id="r_profit" class="big">$0</b></div>
+      <div class="kpi"><span data-i18n="rSpread"></span><b id="r_spread">$0</b></div>
+      <div class="kpi"><span data-i18n="rHolding"></span><b id="r_holding">$0</b></div>
+      <div class="kpi"><span data-i18n="rDaily"></span><b id="r_daily">$0</b></div>
+      <div class="kpi"><span data-i18n="rArvSqft"></span><b id="r_arvSqft">$0</b></div>
+    </div>
+    <div id="warnings"></div>
+    <div class="card">
+      <h2 data-i18n="bridgeTitle"></h2>
+      <div id="bridge"></div>
+    </div>
+    <div class="card">
+      <h2 data-i18n="stressTitle"></h2>
+      <div id="stresses"></div>
+    </div>
+    <div class="card">
+      <h2 data-i18n="howTitle"></h2>
+      <p data-i18n="howBody"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p data-i18n="disclaimer"></p>
+  <p class="ver">Flip Light v1.0 · Case study: 155 Lily Blossom Ct, San Jose (public-record purchase $1,160,000 on 2026-04-29; sold $1,400,000 on 2026-10-16, MLS #BE41146306). Renovation &amp; financing figures in the preset are estimates.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

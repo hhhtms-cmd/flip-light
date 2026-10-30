@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Segoe UI, Roboto, sans-serif; background: #f4f5f7; color: #1c2430; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: #101828; color: #fff; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.logo { font-size: 34px; }
+.topbar h1 { margin: 0; font-size: 22px; }
+.topbar h1 small { color: #98a2b3; font-size: 12px; }
+.topbar p { margin: 2px 0 0; color: #d0d5dd; font-size: 13px; }
+.lang-btn { background: #fff; color: #101828; border: 0; border-radius: 999px; padding: 8px 18px; font-weight: 700; cursor: pointer; }
+.tagline { padding: 12px 20px 0; font-size: 15px; color: #344054; }
+.card { background: #fff; border: 1px solid #e4e7ec; border-radius: 12px; padding: 16px; margin: 12px 0; }
+.toolbar { margin: 12px 20px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { background: #eef2f6; border: 1px solid #d0d5dd; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 13px; }
+.btn.primary { background: #175cd3; color: #fff; border-color: #175cd3; font-weight: 700; }
+.btn:hover { filter: brightness(0.97); }
+.note { width: 100%; margin: 4px 0 0; color: #667085; font-size: 12px; }
+.layout { display: grid; grid-template-columns: minmax(340px, 5fr) 7fr; gap: 16px; padding: 4px 20px 20px; align-items: start; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+h2 { font-size: 15px; margin: 0 0 10px; color: #101828; }
+label { display: block; font-size: 12px; color: #475467; margin-bottom: 10px; }
+label span { display: block; margin-bottom: 4px; }
+input, select { width: 100%; padding: 8px 10px; border: 1px solid #d0d5dd; border-radius: 8px; font-size: 14px; background: #fff; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.reno-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px; color: #1c2430; }
+.reno-row input[type="checkbox"] { width: 18px; height: 18px; }
+.reno-row .reno-name { flex: 1; margin: 0; }
+.reno-row .reno-cost { width: 110px; }
+.cat { color: #98a2b3; font-style: normal; font-size: 11px; }
+.reno-sum { border-top: 1px solid #eaecf0; padding-top: 10px; font-size: 14px; }
+.verdict { border-radius: 12px; padding: 18px; font-size: 22px; font-weight: 800; text-align: center; margin: 12px 0; color: #fff; }
+.verdict.red { background: #b42318; } .verdict.yellow { background: #dc9300; } .verdict.green { background: #067647; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.kpi span { display: block; font-size: 12px; color: #667085; }
+.kpi b { font-size: 18px; } .kpi b.big { font-size: 24px; }
+.pos { color: #067647; } .neg { color: #b42318; }
+.warn { background: #fffaeb; border: 1px solid #fedf89; color: #93370d; border-radius: 10px; padding: 10px 12px; margin: 8px 0; font-size: 13px; }
+.bar-row { display: grid; grid-template-columns: 130px 1fr 100px; gap: 8px; align-items: center; margin: 6px 0; font-size: 13px; }
+.bar-track { background: #eaecf0; border-radius: 6px; height: 16px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; }
+.b-pos { background: #12b76a; } .b-neg { background: #98a2b3; } .b-red { background: #f04438; }
+.bar-val { text-align: right; font-weight: 600; }
+.stress { display: flex; justify-content: space-between; gap: 10px; padding: 9px 12px; border-radius: 8px; margin: 6px 0; font-size: 14px; }
+.stress.ok { background: #ecfdf3; } .stress.bad { background: #fef3f2; }
+.stress em { font-style: normal; font-weight: 700; }
+.survived { color: #475467; font-size: 13px; }
+.photo-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.photo-grid img { width: 110px; height: 82px; object-fit: cover; border-radius: 8px; }
+.file-chip { background: #eef2f6; border-radius: 8px; padding: 8px; font-size: 12px; }
+footer { padding: 0 20px 26px; color: #667085; font-size: 12px; }
+@media print { .toolbar, .inputs .card:first-child, .topbar .lang-btn { display: none; } .layout { grid-template-columns: 1fr; } }
