@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flip Light · Flip 红绿灯 — Pre-Purchase Deal Check</title>
+<!-- v2.0 -->
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
   <div class="brand">
     <div class="logo">🚦</div>
     <div>
-      <h1><span data-i18n="title">Flip 红绿灯</span> <small>v1.0</small></h1>
+      <h1><span data-i18n="title">Flip 红绿灯</span> <small>v2.0</small></h1>
       <p data-i18n="subtitle">买入前决策报告 · Pre-Purchase Deal Check</p>
     </div>
   </div>
@@ -39,14 +40,10 @@
     <div class="card">
       <h2 data-i18n="secProperty"></h2>
       <label><span data-i18n="address"></span><input id="f_address" type="text"></label>
+      <label><span data-i18n="profile"></span><select id="f_profile"></select></label>
+      <p class="note" data-i18n="profileNote"></p>
       <div class="grid2">
         <label><span data-i18n="sqft"></span><input id="f_sqft" type="number" step="1"></label>
-        <label><span data-i18n="tier"></span>
-          <select id="f_tier">
-            <option value="lux" data-i18n="tierLux"></option>
-            <option value="mid" data-i18n="tierMid" selected></option>
-            <option value="entry" data-i18n="tierEntry"></option>
-          </select></label>
         <label><span data-i18n="beds"></span><input id="f_beds" type="number" step="1"></label>
         <label><span data-i18n="baths"></span><input id="f_baths" type="number" step="0.5"></label>
       </div>
@@ -57,9 +54,17 @@
       <div class="grid2">
         <label><span data-i18n="price"></span><input id="f_price" type="number" step="1000"></label>
         <label><span data-i18n="arv"></span><input id="f_arv" type="number" step="1000"></label>
+        <label><span data-i18n="arvLow"></span><input id="f_arvLow" type="number" step="1000"></label>
+        <label><span data-i18n="arvHigh"></span><input id="f_arvHigh" type="number" step="1000"></label>
         <label><span data-i18n="buyPct"></span><input id="f_buyPct" type="number" step="0.1"></label>
         <label><span data-i18n="sellPct"></span><input id="f_sellPct" type="number" step="0.1"></label>
+        <label><span data-i18n="targetMode"></span>
+          <select id="f_targetMode">
+            <option value="usd" data-i18n="tmUsd"></option>
+            <option value="pct" data-i18n="tmPct"></option>
+          </select></label>
         <label><span data-i18n="target"></span><input id="f_target" type="number" step="5000"></label>
+        <label><span data-i18n="targetPct"></span><input id="f_targetPct" type="number" step="0.5"></label>
       </div>
     </div>
 
@@ -101,6 +106,10 @@
     </div>
     <div id="warnings"></div>
     <div class="card">
+      <h2 data-i18n="scenTitle"></h2>
+      <div id="scenarios"></div>
+    </div>
+    <div class="card">
       <h2 data-i18n="bridgeTitle"></h2>
       <div id="bridge"></div>
     </div>
@@ -117,7 +126,7 @@
 
 <footer>
   <p data-i18n="disclaimer"></p>
-  <p class="ver">Flip Light v1.0 · Case study: 155 Lily Blossom Ct, San Jose (public-record purchase $1,160,000 on 2026-04-29; sold $1,400,000 on 2026-10-16, MLS #BE41146306). Renovation &amp; financing figures in the preset are estimates.</p>
+  <p class="ver">Flip Light v2.0 · Case study: 155 Lily Blossom Ct, San Jose (public-record purchase $1,160,000 on 2026-04-29; sold $1,400,000 on 2026-10-16, MLS #BE41146306). Renovation &amp; financing figures in the preset are estimates. Market profiles are adjustable defaults, not official tax/fee schedules.</p>
 </footer>
 <script src="app.js"></script>
 </body>

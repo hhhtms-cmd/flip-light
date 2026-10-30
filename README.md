@@ -1,4 +1,11 @@
-# Flip Light · Flip 红绿灯 — Pre-Purchase Deal Check
+# Flip Light · Flip 红绿灯 — Pre-Purchase Deal Check (v2.0)
+
+**v2.0 — Market Profiles:** the formula is universal; each market ships its own parameters.
+Profiles: Palo Alto / Peninsula Luxury (reno ×1.40, sell-side 5%, systems warning line 40%, ARV stress −8%, +4 months, target = 9% of ARV),
+San Jose Mid-Market (×1.00, 4%, 25%, −5%, +3, fixed $ target), East Bay Volume (×0.95, 4%, 25%, −5%, +3, fixed $),
+US Generic (×0.80, 5%, 30%, −5%, +3, target = 8% of ARV). Switching a profile rescales renovation unit prices;
+every field remains editable, and the agent's own historical numbers should override the pack.
+ARV can be entered as conservative / base / optimistic — all three scenario profits are shown.
 
 Bilingual (中文 / English) static web tool that runs a flip underwriting check **before** signing:
 ceiling ARV → itemised renovation → reverse max-bid price → stress tests → red/yellow/green verdict.
